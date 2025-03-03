@@ -21,6 +21,38 @@ public class Rectangles
         width = (int) (Math.random() * 6) + 5;
     }
 
+    public int getCornerX() {
+        return cornerX;
+    }
+
+    public int getCornerY() {
+        return cornerY;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public boolean overlap(Rectangles rect1, Rectangles rect2) {
+        boolean doesOverlap = false;
+        if ((rect1.getCornerX() == rect2.getCornerX()) && (rect1.getCornerY() == rect2.getCornerY()))
+        {
+            doesOverlap = true;
+        }
+        else if((rect1.getCornerX()+rect1.getWidth()>=rect2.getCornerX())&&(rect2.getCornerX()>=rect1.getCornerX()))
+        {
+            if((rect1.getCornerY()-rect1.getLength()<=rect2.getCornerY()&&(rect2.getCornerY()<=rect1.getCornerY())))
+            {
+                doesOverlap = true;
+            }
+        }
+        return doesOverlap;
+    }
+
     @Override
     public String toString() {
         return ("X: " + cornerX + ", " + "Y: " + cornerY + ", " + "length: " + length + ", " + "Width: " + width);
