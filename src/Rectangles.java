@@ -37,7 +37,7 @@ public class Rectangles
         return width;
     }
 
-    public boolean overlap(Rectangles rect1, Rectangles rect2) {
+    public static boolean overlap(Rectangles rect1, Rectangles rect2) {
         boolean doesOverlap = false;
         if ((rect1.getCornerX() == rect2.getCornerX()) && (rect1.getCornerY() == rect2.getCornerY()))
         {
