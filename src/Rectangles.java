@@ -43,9 +43,16 @@ public class Rectangles
         {
             doesOverlap = true;
         }
-        else if((rect1.getCornerX()+rect1.getWidth()>=rect2.getCornerX())&&(rect2.getCornerX()>=rect1.getCornerX()))
+        if((rect1.getCornerX()+rect1.getWidth()>=rect2.getCornerX())&&(rect2.getCornerX()>=rect1.getCornerX()))
         {
             if((rect1.getCornerY()-rect1.getLength()<=rect2.getCornerY()&&(rect2.getCornerY()<=rect1.getCornerY())))
+            {
+                doesOverlap = true;
+            }
+        }
+        if((rect2.getCornerX()+rect2.getWidth()>=rect1.getCornerX())&&(rect1.getCornerX()>=rect2.getCornerX()))
+        {
+            if((rect2.getCornerY()-rect2.getLength()<=rect1.getCornerY()&&(rect1.getCornerY()<=rect2.getCornerY())))
             {
                 doesOverlap = true;
             }
